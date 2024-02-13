@@ -25,15 +25,17 @@ class MyblogController extends Controller
     }
 
     public function store(Request $request){
-        $myblog = new Myblog();
-        $myblog->title = $request->title;
-        $myblog->subtitle = $request->subtitle;
-        $myblog->body_content = $request->body_content;
-        $myblog->save();
+        $mypost = new Myblog();
+        $mypost->title = $request->title;
+        $mypost->subtitle = $request->subtitle;
+        $mypost->body_content = $request->body_content;
+        $mypost->save();
         return redirect()->route('index');
+    }
 
-
-
-
+    public function destroy($id){
+        $mypost = Myblog::find($id);
+        $mypost->delete();
+        return redirect()->route('index');
     }
 }

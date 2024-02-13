@@ -12,6 +12,8 @@
             <th>Title</th>
             <th>Subtitle</th>
             <th>Body Content</th>
+            <th>Edit</th>
+            <th>Delete</th>
         </thead>
     @foreach($myposts as $mypost)
         <tr>
@@ -19,6 +21,14 @@
             <td>{{$mypost->Title}}</td>
             <td>{{$mypost->Subtitle}}</td>
             <td>{{$mypost->body_content}}</td>
+            <td>Edit Button</td>
+            <td>
+                <form action="{{ route('destroy', $mypost->id) }}" method="post">
+                    @csrf
+                    @method('delete')
+                    <input type="submit" value="{{ $mypost->id }} - Delete" class="btn btn-danger">
+                </form>
+            </td>
         </tr>
     @endforeach
     </table>

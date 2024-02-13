@@ -27,3 +27,5 @@ Route::get('/contactus', [MyController::class, 'contactus'])->name('contactus');
 
 Route::post('/index', [MyController::class, 'store'])->name('store');
 
+Route::delete('/index/{id}', [MyController::class, 'destroy'])->whereNumber('id')->name('destroy');
+
