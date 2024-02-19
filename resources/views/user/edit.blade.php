@@ -20,7 +20,7 @@
         </div>
         <div class="form-group mt-3">
             <label for="exampleFormControlTextarea1">Body Content</label>
-            <textarea name="body_content" value='{{$mypost->body_content}}' class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            <textarea name="body_content" value='{{ $mypost->body_content }}' class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
         </div>
         <button type="submit" class="btn btn-primary mt-3">Update</button>
     </form>

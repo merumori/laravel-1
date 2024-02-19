@@ -33,4 +33,6 @@ Route::post('/index/{id}/edit', [MyController::class, 'edit'])->whereNumber('id'
 
 Route::put('/index/{id}', [MyController::class, 'update'])->whereNumber('id')->name('update');
 
+Route::get('/index/{id}', [MyController::class, 'show'])->name('show');
+
 

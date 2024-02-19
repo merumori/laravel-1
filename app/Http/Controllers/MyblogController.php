@@ -50,4 +50,9 @@ class MyblogController extends Controller
         $mypost->delete();
         return redirect()->route('index');
     }
+
+    public function show($id){
+        $mypost = Myblog::find($id);
+        return view('user.show', compact('mypost'));
+    }
 }

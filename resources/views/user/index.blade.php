@@ -14,6 +14,7 @@
             <th>Body Content</th>
             <th>Edit</th>
             <th>Delete</th>
+            <th>View</th>
         </thead>
     @foreach($myposts as $mypost)
         <tr>
@@ -21,10 +22,12 @@
             <td>{{$mypost->Title}}</td>
             <td>{{$mypost->Subtitle}}</td>
             <td>{{$mypost->body_content}}</td>
+            <td><a href="{{ route('show', $mypost->id) }}" class="btn btn-info">View</a></td>
             <td>
+                <!-- <a href="{{ route('edit', $mypost->id) }}" class="btn btn-danger">{{ $mypost->id }} - Edit</a> -->
                 <form action="{{ route('edit', $mypost->id) }}" method="post">
                     @csrf
-                    <input type="submit" value="{{ $mypost->id }} - Edit" class="btn btn-danger">
+                    <input type="submit" value="{{ $mypost->id }} - Edit" class="btn btn-warning">
                 </form>
             </td>
             <td>
