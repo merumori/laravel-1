@@ -33,6 +33,18 @@ class MyblogController extends Controller
         return redirect()->route('index');
     }
 
+    public function edit($id){
+        $mypost = Myblog::find($id);
+        return view('user.edit', compact('mypost'));
+    }
+    public function update(Request $request, $id){
+        $mypost = Myblog::find($id);
+        $mypost->title = $request->title;
+        $mypost->subtitle = $request->subtitle;
+        $mypost->body_content = $request->body_content;
+        $mypost->save();
+        return redirect()->route('index');
+    }
     public function destroy($id){
         $mypost = Myblog::find($id);
         $mypost->delete();

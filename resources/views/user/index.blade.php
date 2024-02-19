@@ -21,7 +21,12 @@
             <td>{{$mypost->Title}}</td>
             <td>{{$mypost->Subtitle}}</td>
             <td>{{$mypost->body_content}}</td>
-            <td>Edit Button</td>
+            <td>
+                <form action="{{ route('edit', $mypost->id) }}" method="post">
+                    @csrf
+                    <input type="submit" value="{{ $mypost->id }} - Edit" class="btn btn-danger">
+                </form>
+            </td>
             <td>
                 <form action="{{ route('destroy', $mypost->id) }}" method="post">
                     @csrf

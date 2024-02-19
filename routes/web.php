@@ -29,3 +29,8 @@ Route::post('/index', [MyController::class, 'store'])->name('store');
 
 Route::delete('/index/{id}', [MyController::class, 'destroy'])->whereNumber('id')->name('destroy');
 
+Route::post('/index/{id}/edit', [MyController::class, 'edit'])->whereNumber('id')->name('edit');
+
+Route::put('/index/{id}', [MyController::class, 'update'])->whereNumber('id')->name('update');
+
+
